@@ -1,0 +1,98 @@
+import Link from "next/link"
+import Image from "next/image"
+
+export default function Component() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <header className="bg-[#1e3a8a] text-white">
+        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="text-lg font-medium">
+            Tuition Free Education Program on Latest Technologies
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            <Link className="hover:text-gray-200" href="/">
+              Home
+            </Link>
+            <Link className="hover:text-gray-200" href="/apply">
+              Apply
+            </Link>
+            <Link className="hover:text-gray-200" href="/jobs">
+              Jobs
+            </Link>
+            <Link className="hover:text-gray-200" href="/result">
+              Result
+            </Link>
+            <Link className="hover:text-gray-200" href="/courses">
+              Courses
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <main className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <h1 className="space-y-4">
+              <span className="block text-4xl md:text-5xl font-bold text-[#1e3a8a]">
+                Governor Sindh
+              </span>
+              <span className="block text-3xl md:text-4xl font-bold text-[#1e3a8a]">
+                Kamran Khan Tessori
+              </span>
+            </h1>
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold text-[#06b6d4]">
+                Certified Cloud
+              </h2>
+              <h2 className="text-3xl font-bold text-[#06b6d4]">
+                Applied Generative AI
+              </h2>
+              <h2 className="text-3xl font-bold text-[#06b6d4]">
+                Engineer (GenEng)
+              </h2>
+            </div>
+            <p className="text-2xl md:text-3xl font-bold text-[#1e3a8a]">
+              Earn up to $5,000 / month
+            </p>
+            <p className="text-xl md:text-2xl font-bold text-[#1e3a8a]">
+              Now admissions are open in Hyderabad
+            </p>
+            <Link
+              href="/apply"
+              className="inline-block bg-[#1e3a8a] text-white px-8 py-3 rounded-md font-semibold text-lg hover:bg-[#1e3a8a]/90 transition-colors"
+            >
+              Apply Now
+            </Link>
+          </div>
+          <div className="relative h-[600px]">
+            <Image
+              src="/placeholder.svg"
+              alt="Governor Sindh"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Description Section */}
+        <section className="max-w-4xl mx-auto mt-16 space-y-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-[#1e3a8a]">
+            Certified Cloud Applied Generative AI Engineer (GenEng) and Solopreneur
+            Developing Billion-Dollar Valued Developers and Solopreneurs
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            The pace of technological change is accelerating, big players like
+            Microsoft, Amazon, Google, and OpenAI are winning by providing
+            infrastructure, large AI foundation models, frameworks, 3D Metaverse
+            experiences, and massive distribution networks. Solopreneurs trained in
+            this program will win by automating work typically advanced to employees,
+            by directly connecting to customers.
+          </p>
+        </section>
+      </main>
+    </div>
+  )
+}
