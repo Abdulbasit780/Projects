@@ -1,0 +1,134 @@
+import Link from "next/link"
+import { Phone, Search } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export default function Component() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Top Bar */}
+      <div className="bg-black text-white px-4 py-2 text-sm flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <Phone className="h-4 w-4" />
+          <span>Download App via SMS</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <Link href="#" className="hover:text-gray-300">
+            اردو
+          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="#" className="hover:text-gray-300">
+              Sign In
+            </Link>
+            <span>|</span>
+            <Link href="#" className="hover:text-gray-300">
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <nav className="bg-black border-t border-gray-800 px-4 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <Link href="/" className="text-white font-bold text-xl">
+              PakWheels
+            </Link>
+            <div className="hidden md:flex items-center gap-6 text-white">
+              <Link href="#" className="hover:text-gray-300">
+                Used Cars
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                New Cars
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                Bikes
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                Auto Store
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                Videos
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                Forums
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                Blog
+              </Link>
+              <Link href="#" className="hover:text-gray-300">
+                More
+              </Link>
+            </div>
+          </div>
+          <Button className="bg-red-600 hover:bg-red-700 text-white">Post an Ad</Button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="flex-1 bg-gradient-to-b from-blue-900 to-blue-950">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl font-bold text-white mb-8">Find Used Cars in Pakistan</h1>
+          <div className="flex">
+            <Input
+              placeholder="Search..."
+              className="rounded-r-none border-r-0 bg-white text-black"
+            />
+            <Button className="rounded-l-none bg-green-500 hover:bg-green-600 px-8">
+              <Search className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Sell Your Car Section */}
+      <div className="py-12 px-4">
+        <h2 className="text-2xl font-semibold text-center mb-8">
+          Sell Your Car on PakWheels and Get the Best Price
+        </h2>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div className="border rounded-lg p-6 text-center">
+            <h3 className="text-xl font-semibold mb-4">Post Your Ad on PakWheels</h3>
+            <ul className="text-gray-600 space-y-2 mb-6">
+              <li>Post your Ad for Free in 3 Easy Steps</li>
+              <li>Get Genuine offers from Verified Buyers</li>
+              <li>Sell your car Fast at the Best Price</li>
+            </ul>
+            <Button className="bg-red-600 hover:bg-red-700 text-white w-full">
+              Post Your Ad
+            </Button>
+          </div>
+          <div className="text-center text-2xl font-medium text-gray-500">OR</div>
+          <div className="border rounded-lg p-6 text-center">
+            <h3 className="text-xl font-semibold mb-4">Try PakWheels Sell It For Me</h3>
+            <ul className="text-gray-600 space-y-2 mb-6">
+              <li>Dedicated Sales Expert to Sell your Car</li>
+              <li>We Bargain for you and share the Best Offer</li>
+              <li>We ensure Safe & Secure Transaction</li>
+            </ul>
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white w-full">
+              Register Your Car
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Cars Section */}
+      <div className="bg-gray-50 py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-6">Featured New Cars</h2>
+          <Tabs defaultValue="popular">
+            <TabsList>
+              <TabsTrigger value="popular">Popular</TabsTrigger>
+              <TabsTrigger value="upcoming">Up Coming</TabsTrigger>
+              <TabsTrigger value="launched">Newly Launched</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+      </div>
+    </div>
+  )
+}
